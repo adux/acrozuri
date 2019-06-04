@@ -86,10 +86,10 @@ jQuery(function($) {
     });
 
 	//3. Upcomming Event - Countdown Plugin
-    $("#countdown").countdown({
-        date: "29 december 2016 12:00:00",
-        format: "on"
-    });
+    //$("#countdown").countdown({
+    //    date: "29 december 2016 12:00:00",
+    //    format: "on"
+    //});
 
     //4. Clients - Owl Carousel Plugin
     $('#client-slider').owlCarousel({
