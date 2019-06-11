@@ -285,4 +285,4 @@ class Class(models.Model):
     location = models.CharField(max_length=72)
     price = models.CharField(max_length=36)
     web = models.CharField(max_length=72)
-    note = models.CharField(max_length=144)
+    note = models.CharField(max_length=144, null=True, blank=True)

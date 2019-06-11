@@ -25,6 +25,12 @@
           </div>
         </div> <!--/.row-->
         <div class="row">
+          <div class="col-sm-8 col-xs-12">
+            <div class="article">
+              <h2>Open Traning Zirkus Quartier</h2>
+              <p>Ever wondered how a Zirkus Open traning looks like ? This is a good oportunity to see many different diciplines on the traning floor. Since a year or two the Acro community as been regularly going there to practice Acro in all different variations. Feel free to join! Questions? Look our <a href="www.acrozuri.ch/#faq">FAQ</a></p>
+            </div> <!--/.article-->
+          </div>
           <div class="col-sm-4 col-xs-12">
             <ul class="fa-ul event">
               <li><i class="fa-li fa fa-calendar"></i> Jam Date: each Monday</li>
@@ -32,12 +38,6 @@
               <li><i class="fa-li fa fa-map-marker"></i> Location: Flurstrasse 85, 8047 Zürich</li>
               <li><i class="fa-li fa fa-credit-card"></i> Donation: CHF 5.-</li>
             </ul>
-          </div>
-          <div class="col-sm-8 col-xs-12">
-            <div class="article">
-              <h2>Open Traning Zirkus Quartier</h2>
-              <p>Ever wondered how a Zirkus Open traning looks like ? This is a good oportunity to see many different diciplines on the traning floor. Since a year or two the Acro community as been regularly going there to practice Acro in all different variations. Feel free to join! Questions? Look our <a href="www.acrozuri.ch/#faq">FAQ</a></p>
-            </div> <!--/.article-->
           </div>
         </div> <!--/.row-->
       </div> <!--/.container-->
@@ -63,10 +63,10 @@
                     <li><i class="fa-li fa fa-map-marker"></i> Location: {{obj.location}}</li>
                     <li><i class="fa-li fa fa-credit-card"></i> Price: {{obj.price}}</li>
                     <li><i class="fa-li fa fa-globe"></i> Link: <a href="{{obj.web}}">{{obj.web}}</a></li>{% if obj.note%}
-                    <li><i class="fa-li fa fa-arrow-right"></i> Note: {{obj.note}}</li>{% endif%}{% endfor %}
+                    <li><i class="fa-li fa fa-arrow-right"></i> Note: {{obj.note}}</li>{% endif%}
                 </ul>
             </div> <!--//item1-->
-          </div> <!--/.col-->
+          </div> <!--/.col-->{% endfor %}
         </div> <!--/.row-->
       </div> <!--/.container-->
     </section>
