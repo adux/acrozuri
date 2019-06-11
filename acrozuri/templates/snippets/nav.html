@@ -1,0 +1,22 @@
+<!-- Menu Start -->
+<!-- Collect the nav links, forms, and other content for toggling -->
+<nav class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active dropdown">
+          <a href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+        </li>
+        <li class="dropdown">
+          <a href="{% url "event" %}" class="dropdown-toggle" data-toggle="dropdown">Jams & Classes</a>
+        </li>
+        <li class="dropdown">
+          <a href="{% url "home" %}#about" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
+        </li>
+    </ul>
+</nav>
+<!-- /.navbar-collapse -->

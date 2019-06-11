@@ -53,10 +53,119 @@
       {% endfor %}
     {% endif %}
     <!-- Content -->
+<div id="preloader"></div>
+    <div class="body-inner">
+        <!-- top header start -->
+        <div class="top-header hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="social-icon">
+                            <ul>
+                                <li>
+                                    <a title="Facebook" href="https://www.facebook.com/groups/374334435978564/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a title="Instagram" href="www.instagram.com/acrozuri" target="_blank"><i class="fa fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div> <!--/.social-icon-->
+                    </div> <!--/.col-->
+                    <div class="col-md-6">
+                        <div class="top-email pull-right">
+                            <a href="mailto:info@acrozuri.ch">
+                                <i class="fa fa-envelope-o"></i> info@acrozuri.ch
+                            </a>
+                        </div> <!--/.top-email-->
+                    </div> <!--/.col-->
+                </div> <!--/.row-->
+            </div> <!--/.container-->
+        </div> <!--/.top-header-->
+        <!-- top header end -->
+        <header class="header" id="header" role="banner">
+            <!-- navigation start -->
+            <div class="navbar">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="img-responsive" src="{% static "images/logo.png" %}" alt="">
+                        </a>
+                    </div>
+                    {% include 'snippets/nav.html' %}
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+        </header>
+        <!-- header end -->
     {% block content %}
     {% endblock content %}
 
 
+        <!-- footer start -->
+        <!-- check -->
+        <footer>
+            <div class="footer-section pad-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="ft-title"><span>Keep in touch</span></h2>
+                            <div class="footer-widget-1 address">
+                                <ul>
+                                    <li><i class="fa fa-envelope"></i><a href="mailto:info@acrozuri.ch">info@acrozuri.ch</a></li>
+                                    <li><i class="fa fa-globe"></i><a href="http://acrozuri.ch" target="_blank">www.acrozuri.ch</a></li>
+                                    <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/groups/374334435978564/" target="_blank">Acroyoga Zürich Group</a></li>
+                                </ul>
+                            </div>
+                        </div> <!--/footer-1-->
+                        <div class="col-md-4">
+                            <div class="footer-widget-2 text-center">
+                                <img src="{% static "images/logo_inverted.png" %}" alt="footer-logo">
+                                <p>Send us your acro pics and videos in #züri and we'll post it! Help us grow and spread ! <3</p>
+                            </div>
+                            <div class="footer-social">
+                                <div class="social-icon">
+                                    <ul>
+                                        <li>
+                                        <li>
+                                            <a title="Facebook" href="https://www.facebook.com/groups/374334435978564/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a title="Instagram" href="www.instagram.com/acrozuri" target="_blank"><i class="fa fa-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div> <!--/.social-icon-->
+                            </div>
+                        </div> <!--/footer-2-->
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <small>Copyright © 2019. All Rights Reserved. Designed by Adrian Garate</small>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="foot-menu">
+                                <li><a href="www.acrolama.com">Designed by Adrian Garate from Acrolama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+        <!-- back-to-top start -->
+        <a href="#" id="back-to-top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+        <!-- back-to-top end -->
+    </div>
     {% block modal %}{% endblock modal %}
 
     <!-- Le javascript
