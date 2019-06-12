@@ -761,7 +761,7 @@ h3.sm-title {
     color: #32313b;
     font-weight: 400;
     font-size: 22px;
-    margin: 0 0 30px 15px;
+    margin: 0 0 0 10px;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
 }

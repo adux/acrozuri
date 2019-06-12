@@ -118,15 +118,6 @@ jQuery(function($) {
         }
     });
 
-    //5. Twitter Feed - Tweetie Plugin
-    $('#twitter-feed .tweet').twittie({
-    	username: 'ithemeslab',
-        dateFormat: '%b. %d, %Y',
-        template: '<div class="tweet-icon"><i class="fa fa-twitter fa-2x"></i></div><div class="tweet-date">{{date}}</div><div class="tweet-content">{{tweet}}</div>',
-        count: 1,
-        loadingText: 'Loading!'
-    });
-
     //6. Footer Gallery - Fancybox Plugin
     $(".fancybox").fancybox();
 

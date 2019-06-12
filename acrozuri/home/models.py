@@ -280,9 +280,10 @@ class News(models.Model):
 
 class Class(models.Model):
     title = models.CharField(max_length=72)
+    teacher = models.CharField(max_length=72, null=True, blank=True)
     date = models.CharField(max_length=36)
     time = models.TimeField()
-    location = models.CharField(max_length=72)
+    location = models.CharField(max_length=72, null=True, blank=True)
     price = models.CharField(max_length=36)
     web = models.CharField(max_length=72)
     note = models.CharField(max_length=144, null=True, blank=True)
