@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static i18n %}
 {% block content %}
     <!-- main content start -->
-    <section id="main-content" class="main-content pad-60">
+    <section id="events" class="main-content pad-60">
       <div class="container">
         <div class="row">
           <div class="col-md-12 pad-b-60">
@@ -9,20 +9,28 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-8 col-xs-12">
-            <div class="article">
-              <h2>Zirkus Quartier Acroyoga Jam</h2>
-              <p>The oldest Acroyoga jam in Züri. Zirkus chnopf has giving shellter to this jam for about 5 years now, come, join and meet the community. If you have anyquestions regarding experience needed or so we reccomend you to visit our <a href="www.acrozuri.ch/#faq">FAQ</a></p>
-            </div> <!--/.article-->
-          </div>
-          <div class="col-sm-4 col-xs-12">
-            <ul class="fa-ul event">
-              <li><i class="fa-li fa fa-calendar"></i> Jam Date: each Thursday</li>
-              <li><i class="fa-li fa fa-clock-o"></i> Jam Time: 19:15 </li>
-              <li><i class="fa-li fa fa-map-marker"></i> Location: Flurstrasse 85, 8047 Zürich</li>
-              <li><i class="fa-li fa fa-credit-card"></i> Donation: CHF 5.-</li>
-            </ul>
-          </div>
+            <div class="col-sm-8 col-xs-12">
+                <div class="article">
+                    <h2>JAMS</h2>
+                    <p>What is this even? Whenever the weather permits, we love to gather somewhere outside and play together. These so-called jams are self-organized, usually in our WhatsApp group. Most jams take place at either Chinawiese or Josefwiese. It’s a great opportunity to get a sense of what AcroYoga is all about and meet some new people. There’s really worse things to do than being out in the sun and having fun.</br> Find listed below a few of the regular Jams in Zürich, keep in mind that on good weather conditions participants might prefere to be outdoors.</p></br>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-xs-12">
+                <div class="article">
+                  <h2>Zirkus Quartier Acroyoga Jam</h2>
+                  <p>The oldest Acroyoga jam in Züri. Zirkus chnopf has giving shellter to this jam for about 5 years now, come, join and meet the community. If you have anyquestions regarding experience needed or so we reccomend you to visit our <a href="www.acrozuri.ch/#faq">FAQ</a></p>
+                </div> <!--/.article-->
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <ul class="fa-ul event">
+                  <li><i class="fa-li fa fa-calendar"></i> Jam Date: each Thursday</li>
+                  <li><i class="fa-li fa fa-clock-o"></i> Jam Time: 19:15 </li>
+                  <li><i class="fa-li fa fa-map-marker"></i> Location: Flurstrasse 85, 8047 Zürich</li>
+                  <li><i class="fa-li fa fa-credit-card"></i> Donation: CHF 5.-</li>
+                </ul>
+            </div>
         </div> <!--/.row-->
         <div class="row">
           <div class="col-sm-8 col-xs-12">
@@ -45,13 +53,21 @@
     <!-- main content end -->
 
     <!-- feature start -->
-    <section id="feature" class="feature pad-b-80">
+    <section id="classes" class="main-content pad-b-80">
         <div class="container">
             <div class="row">
               <div class="col-md-12 pad-b-60">
                   <img src="{%static "images/all/class.jpg" %}" class="img-responsive" alt="Jam Images">
               </div>
             </div><!-- ./row -->
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                    <div class="article">
+                        <h2>CLASSES</h2>
+                        <p>Take your skills to the next level! Classes are a great way to improve your skills in a more structured way or work on a particular trick according to your level. We have quite a broad range of classes happening in Zurich almost every day of the week. Find all the classes on the list below and make your pick</p></br>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="row pad-b-60">{% for obj in class %}
                     <div class="col-md-4 col-sm-4 col-xs-12">
