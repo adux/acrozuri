@@ -160,8 +160,8 @@ jQuery(function($) {
 
     //Accordion
     $('#st-accordion, #st-accordion1, #st-accordion2').accordion({
-        oneOpenedItem   : true,
-        open            : 0
+        oneOpenedItem   : false,
+        open            : -1
     });
 
     //timer
