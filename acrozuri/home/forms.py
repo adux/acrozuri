@@ -1,10 +1,9 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 from acrozuri.home.models import Member, News
 
 
-class RegisterForm(forms.ModelForm):
-    action = forms.CharField(max_length=60, widget=forms.HiddenInput())
-
+class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
         fields = ['first_name',
@@ -18,6 +17,14 @@ class RegisterForm(forms.ModelForm):
                   'email',
                   'note',
                   ]
+        labels = {
+            'b_date': _('Birthday')
+        }
+        widgets = {
+            'first_name': forms.TextInput(attrs={'placeholder': 'Max'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Munster'}),
+            'b_date': forms.DateInput(attrs={'placeholder': '12/12/1990'}),
+        }
 
 
 class NewsForm(forms.ModelForm):

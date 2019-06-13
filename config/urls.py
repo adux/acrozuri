@@ -4,12 +4,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from acrozuri.home.views import EventView
+from acrozuri.home.views import EventView, MemberView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/index.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
     path("events/", EventView.as_view(), name="event"),
+    path("member/", MemberView.as_view(), name="member"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management

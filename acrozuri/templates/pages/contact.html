@@ -1,4 +1,4 @@
-    <!-- page start -->{% load static i18n %}
+<!-- page start -->{% load static i18n %}{% load crispy_forms_tags %}
     <section id="contact" class="main-content pad-60"><
       <div class="container">
         <div class="row">
@@ -8,39 +8,10 @@
               <h3>Contact Form</h3>
               <p>Send an Email. All fields with an * are required.</p>
               <div class="row">
-                <form class="form-inline" id="contactForm" name="contact" data-toggle="validator" class="shake" >
-                    <div class="form-sec1">
-                      <div class="col-md-4 col-xs-12">
-                        <div class="form-group">
-                          <label for="name">Name <b>*</b></label>
-                          <input type="text" class="form-control" id="name" name="name">
-                        </div>
-                      </div>
-                      <div class="col-md-4 col-xs-12">
-                        <div class="form-group">
-                          <label for="email">Email <b>*</b></label>
-                          <input type="email" class="form-control" id="email" name="email">
-                        </div>
-                      </div>
-                      <div class="col-md-4 col-xs-12">
-                        <div class="form-group">
-                          <label for="msg_subject">Subject</label>
-                          <input type="text" class="form-control" id="msg_subject" name="phone">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-sec2">
-                      <div class="col-md-12 col-xs-12">
-                        <textarea class="form-control" id="message" rows="10"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-sec3">
-                      <div class="col-md-4 col-xs-12">
-                        <button type="submit" id="submit" class="btn btn-primary hvr-sweep-to-right" name="submit">Send Mail</button>
-                      </div>
-                    </div>
-                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                  </form>
+                <form method="post">{% csrf_token %}
+                    {{ form.news|crispy }}
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
               </div>
             </div>
             <!-- contact form end -->

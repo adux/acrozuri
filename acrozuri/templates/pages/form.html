@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <section id="events" class="main-content pad-60">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 pad-b-60">
+              <img src="{%static "images/slideshow/slider1.jpg" %}" class="img-responsive" alt="Jam Images">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="article">
+                    <h2> Verein "Acro Züri" Aufnahmegesuch Aktivmitglied </h2>
+                    <p> Der / die Unterzeichnende stellt hiermit dem Vorstand des Vereins "Acro Züri" ein GEsuch um Aufnahme als Vereinsmitglied der Kategorie Aktivmitglied.</p>
+                    <p>Die Jahresmitgliedschasgebühr für das Jahr 2019 beträgt als Aktivmitglied CHF 100.-.</p>
+                    <p>Mit der Unterschrift bestätigt der / die Unterzeichnende die Vereinsstatuten vollumfänglich gelesen und verstanden zu haben und anerkennt diese.i</p>
+                    <p>Voraussetzung für die Aufnahme als Aktivmitglied im Verein «Acro Züri» ist der Besuch eines kostenfreien Unfall-Präventionskurses.</p>
+                    <p>Ein Austritt aus dem Verein ist nur auf Ende eines Kalenderjahres möglich. Die Austrittserklärung ist spätestens bis Ende September desselben Jahres schriftlich an den Vorstand zu richten.</p>
+                    <p>Der / die Unterzeichnende nimmt zur Kenntnis, dass Einladungen zu Vereinsversammlungen grundsätzlich per E-Mail erfolgen.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <form method="post">{% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div> <!--/.row-->
+      </div> <!--/.container-->
+    </section>
+    <!-- main content end -->
+{% endblock %}

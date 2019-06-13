@@ -1,36 +1,21 @@
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import FormView
 from .multiforms import MultiFormsView
 from .models import Class
-from .forms import RegisterForm, NewsForm
+from .forms import MemberForm, NewsForm
 
 
 class HomeView(MultiFormsView):
     template_name = "pages/index.html"
-    forms_classes = {'register': RegisterForm,
-                     'news': NewsForm,
-                     }
-    success_urls = {'register': reverse_lazy('home'),
-                    'news': reverse_lazy('home'),
-                    }
+    forms_classes = {'news': NewsForm}
+    success_urls = {'news': reverse_lazy('home')}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-
-    def register_form_valid(self, form):
-        instance = form.save(commit=False)
-        form_name = form.cleaned_data.get('action')
-        subject = "New Registration"
-        message = "Check new registration in www.acrozuri.ch"
-        sender = "dontreply@acrozuri.ch"
-        to = "info@acrozuri.ch"
-        send_mail(subject, message, sender, to)
-        instance.save()
-        return HttpResponseRedirect(self.get_success_url(form_name))
 
     def news_form_valid(self, form):
         instance = form.save(commit=False)
@@ -53,3 +38,19 @@ class EventView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['class'] = Class.objects.all()
         return context
+
+
+class MemberView(FormView):
+    template_name = "pages/form.html"
+    form_class = MemberForm
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        subject = "New Registration"
+        message = "Check new registration in www.acrozuri.ch"
+        sender = "dontreply@acrozuri.ch"
+        to = {'info@acrozuri.ch'}
+        send_mail(subject, message, sender, to)
+        instance.save()
+        return super().form_valid(form)
