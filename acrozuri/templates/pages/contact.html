@@ -9,8 +9,8 @@
               <p>Send an Email. All fields with an * are required.</p>
               <div class="row">
                 <form method="post">{% csrf_token %}
-                    {{ form.news|crispy }}
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    {{ forms.news|crispy }}
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </form>
               </div>
             </div>
@@ -18,11 +18,11 @@
           </div>
           <div class="col-md-5">
             <h3 class="sm-title"><span>Contact Info</span></h3>
-            <p>We really like to keep in touch! Get all your ideas, comments and so on. We responde everything, just keep in mind that it might take time to responde. For urgent questons try asking in the community Telegram group or Facebook Group.</p>
+            <p>We really like to keep in touch with the community: Hear all your ideas, take your suggestions, work with you. For urgent questions, try asking in the community telegram or facebook group.</p>
             <ul class="fa-ul">
                 <li><i class="fa-li fa fa-envelope"></i><a href="mailto=info@acrozuri.ch">info@acrozuri.ch</a></li>
                 <li><i class="fa-li fa fa-paper-plane"></i> <a href="t.me/acroyogazurich">t.me/acrozuri</a></li>
-                <li><i class="fa-li fa fa-facebook"></i><a  href="https://www.facebook.com/groups/374334435978564/" target="_blank"> Facebok Group</a>
+                <li><i class="fa-li fa fa-facebook"></i><a  href="https://www.facebook.com/groups/374334435978564/" target="_blank">Facebok</a>
             </ul>
           </div>
         </div> <!--/.row-->

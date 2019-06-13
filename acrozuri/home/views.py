@@ -10,12 +10,8 @@ from .forms import MemberForm, NewsForm
 
 class HomeView(MultiFormsView):
     template_name = "pages/index.html"
-    forms_classes = {'news': NewsForm}
+    form_classes = {'news': NewsForm}
     success_urls = {'news': reverse_lazy('home')}
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
 
     def news_form_valid(self, form):
         instance = form.save(commit=False)
