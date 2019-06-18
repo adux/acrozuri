@@ -46,7 +46,7 @@ class MemberView(FormView):
         subject = "Verein Registration"
         message = "Thanks for Registering" + instance.first_name + ' ' + instance.last_name + " we will get in contact with you in the next 3 working days. \r\n\r\n See you soon\r\nAcro Züri Verein"
         sender = "noreply@acrozuri.ch"
-        to = {instance.email, 'info@acrozuri.ch'}
+        to = [instance.email, 'info@acrozuri.ch']
         send_mail(subject, message, sender, to)
         instance.save()
         return super().form_valid(form)
