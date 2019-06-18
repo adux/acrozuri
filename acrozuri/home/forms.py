@@ -28,6 +28,7 @@ class MemberForm(forms.ModelForm):
 
 
 class NewsForm(forms.ModelForm):
+    action = forms.CharField(max_length=60, widget=forms.HiddenInput())
 
     class Meta:
         model = News
