@@ -20,7 +20,7 @@ class HomeView(MultiFormsView):
         email = form.cleaned_data.get('email')
         subject = form.cleaned_data.get('subject')
         message = email + " " + name + " \r\n\r\n" + form.cleaned_data.get('message')
-        sender = email
+        sender = 'noreply@acrozuri.ch'
         to = ['info@acrozuri.ch']
         send_mail(subject, message, sender, to)
         instance.save()
@@ -45,7 +45,7 @@ class MemberView(FormView):
         instance = form.save(commit=False)
         subject = "Verein Registration"
         message = "Thanks for Registering" + instance.first_name + ' ' + instance.last_name + " we will get in contact with you in the next 3 working days. \r\n\r\n See you soon\r\nAcro Züri Verein"
-        sender = "noreply@acrozuri.ch"
+        sender = 'noreply@acrozuri.ch'
         to = [instance.email, 'info@acrozuri.ch']
         send_mail(subject, message, sender, to)
         instance.save()
