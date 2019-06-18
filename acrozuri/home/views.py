@@ -19,8 +19,8 @@ class HomeView(MultiFormsView):
         name = form.cleaned_data.get('name')
         email = form.cleaned_data.get('email')
         subject = form.cleaned_data.get('subject')
-        message = name + " ," + form.cleaned_data.get('message')
-        sender = email
+        message = email + " " + name + " \r\n\r\n" + form.cleaned_data.get('message')
+        sender = ['noreply@acrozuri.ch']
         to = ['info@acrozuri.ch']
         send_mail(subject, message, sender, to)
         instance.save()
