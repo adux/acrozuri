@@ -264,7 +264,7 @@ class Member(models.Model):
     country = CountryField(default='CH')
     phone = models.CharField(max_length=36)
     email = models.CharField(max_length=72)
-    note = models.TextField(max_length=2000)
+    note = models.TextField(max_length=2000, null=True, blank=True)
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):

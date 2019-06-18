@@ -23,7 +23,7 @@ class MemberForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={'placeholder': 'Max'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Munster'}),
-            'b_date': forms.DateInput(attrs={'placeholder': '12/12/1990'}),
+            'b_date': forms.TextInput(attrs={'placeholder': '12/12/1990'}),
         }
 
 
