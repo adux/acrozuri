@@ -22,7 +22,7 @@ class HomeView(MultiFormsView):
         message = name + " ," + form.cleaned_data.get('message')
         sender = email
         to = 'info@acrozuri.ch'
-        send_mail(subject, message, sender, to)  # TODO config email
+        send_mail(subject, message, sender, to)
         instance.save()
         return HttpResponseRedirect(self.get_success_url(form_name))
 
@@ -43,10 +43,10 @@ class MemberView(FormView):
 
     def form_valid(self, form):
         instance = form.save(commit=False)
-        subject = "New Registration"
-        message = "Check new registration in www.acrozuri.ch"
-        sender = "dontreply@acrozuri.ch"
-        to = {'info@acrozuri.ch'}
+        subject = "Verein Registration"
+        message = "Thanks for Registering" + instance.first_name + ' ' + instance.last_name + " we will get in contact with you in the next 3 working days. \r\n\r\n See you soon\r\nAcro Züri Verein"
+        sender = "noreply@acrozuri.ch"
+        to = {instance.email, 'info@acrozuri.ch'}
         send_mail(subject, message, sender, to)
         instance.save()
         return super().form_valid(form)
