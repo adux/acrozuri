@@ -21,7 +21,7 @@ class HomeView(MultiFormsView):
         subject = form.cleaned_data.get('subject')
         message = name + " ," + form.cleaned_data.get('message')
         sender = email
-        to = 'info@acrozuri.ch'
+        to = ['info@acrozuri.ch']
         send_mail(subject, message, sender, to)
         instance.save()
         return HttpResponseRedirect(self.get_success_url(form_name))
