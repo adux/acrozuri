@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
+from django.db.models import F
+from django.contrib import messages
 from .multiforms import MultiFormsView
 from .models import Class
 from .forms import MemberForm, NewsForm
@@ -22,6 +24,7 @@ class HomeView(MultiFormsView):
         message = "From: " + email + "\r\nName:" + name + " \r\n\r\nMessage: " + form.cleaned_data.get('message')
         to = ['info@acrozuri.ch']
         send_mail(subject, message, to)
+        messages.add_message(self.request, messages.SUCCESS, F'Thanks for writing us, we will get back to you ;) !')
         instance.save()
         return HttpResponseRedirect(self.get_success_url(form_name))
 
@@ -47,4 +50,5 @@ class MemberView(FormView):
         to = [instance.email, 'info@acrozuri.ch']
         send_mail(subject, message, to)
         instance.save()
+        messages.add_message(self.request, messages.SUCCESS, F'Thanks for Registering, please check your email.')
         return super().form_valid(form)
