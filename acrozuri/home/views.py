@@ -22,8 +22,9 @@ class HomeView(MultiFormsView):
         email = form.cleaned_data.get('email')
         subject = form.cleaned_data.get('subject')
         message = "From: " + email + "\r\nName:" + name + " \r\n\r\nMessage: " + form.cleaned_data.get('message')
+        sender = 'noreply@acrozuri.ch'
         to = ['info@acrozuri.ch']
-        send_mail(subject, message, to)
+        send_mail(subject, message, sender, to)
         messages.add_message(self.request, messages.SUCCESS, F'Thanks for writing us, we will get back to you ;) !')
         instance.save()
         return HttpResponseRedirect(self.get_success_url(form_name))
@@ -47,8 +48,9 @@ class MemberView(FormView):
         instance = form.save(commit=False)
         subject = "Acro Zuri Verein - Registration"
         message = "Grüessech " + instance.first_name + " " + instance.last_name + "\r\n\r\n Thanks for"+"registering! We will get in touch within the next 3 working days.\r\n\r\nSee you soon!\r\nAcro Züri Verein"
+        sender = 'noreply@acrozuri.ch'
         to = [instance.email, 'info@acrozuri.ch']
-        send_mail(subject, message, to)
+        send_mail(subject, message, sender, to)
         instance.save()
         messages.add_message(self.request, messages.SUCCESS, F'Thanks for Registering, please check your email.')
         return super().form_valid(form)
