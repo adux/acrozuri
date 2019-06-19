@@ -21,9 +21,12 @@ class MemberForm(forms.ModelForm):
             'b_date': _('Birthday')
         }
         widgets = {
-            'first_name': forms.TextInput(attrs={'placeholder': 'Max'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Munster'}),
-            'b_date': forms.TextInput(attrs={'placeholder': '12/12/1990'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Example: Max'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Example: Munster'}),
+            'b_date': forms.SelectDateWidget(attrs={'placeholder': '1945-10-10'},
+                                             empty_label={"Choose Year", "Choose Month", "Choose Day"}
+                                             ),
+            'phone': forms.TextInput(attrs={'placeholder': '+4179123456'}),
         }
 
 
