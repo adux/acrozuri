@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
-from django.db.models import F
 from django.contrib import messages
 from .multiforms import MultiFormsView
 from .models import Class
@@ -47,7 +46,11 @@ class MemberView(FormView):
     def form_valid(self, form):
         instance = form.save(commit=False)
         subject = "Acro Zuri Verein - Registration"
-        message = "Grüessech " + instance.first_name + " " + instance.last_name + "\r\n\r\n Thanks for"+"registering! We will get in touch within the next 3 working days.\r\n\r\nSee you soon!\r\nAcro Züri Verein"
+        message = "Grüessech " + instance.first_name
+        + " "
+        + instance.last_name
+        + "\r\n\r\n Thanks for"
+        +"registering! We will get in touch within the next days.\r\n\r\nSee you soon!\r\nAcro Züri Verein"
         sender = 'noreply@acrozuri.ch'
         to = [instance.email, 'info@acrozuri.ch']
         send_mail(subject, message, sender, to)
