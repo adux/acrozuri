@@ -287,3 +287,6 @@ class Class(models.Model):
     price = models.CharField(max_length=36)
     web = models.CharField(max_length=72)
     note = models.CharField(max_length=144, null=True, blank=True)
+
+    def __str__(self):
+        return '%s - %s, %s' % (self.teacher, self.title, self.date)
