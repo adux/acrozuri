@@ -1,6 +1,10 @@
+from datetime import datetime
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from acrozuri.home.models import Member, News
+
+min_age = 10
+this_year = datetime.now().year
 
 
 class MemberForm(forms.ModelForm):
@@ -23,8 +27,8 @@ class MemberForm(forms.ModelForm):
         widgets = {
             'first_name': forms.TextInput(attrs={'placeholder': 'Example: Max'}),
             'last_name': forms.TextInput(attrs={'placeholder': 'Example: Muster'}),
-            'b_date': forms.SelectDateWidget(attrs={'placeholder': '1945-10-10'},
-                                             empty_label={"Choose Year", "Choose Month", "Choose Day"}
+            'b_date': forms.SelectDateWidget(empty_label={"Choose Year", "Choose Month", "Choose Day"},
+                                             years=range(this_year - (min_age + 80), this_year - min_age),
                                              ),
             'phone': forms.TextInput(attrs={'placeholder': '+4179123456'}),
         }
