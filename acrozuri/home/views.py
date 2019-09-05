@@ -46,11 +46,7 @@ class MemberView(FormView):
     def form_valid(self, form):
         instance = form.save(commit=False)
         subject = "Acro Zuri Verein - Registration"
-        message = "Grüessech " + instance.first_name
-        + " "
-        + instance.last_name
-        + "\r\n\r\n Thanks for"
-        +"registering! We will get in touch within the next days.\r\n\r\nSee you soon!\r\nAcro Züri Verein"
+        message = "Grüessech " + instance.first_name + " " + instance.last_name + "\r\n\r\n Thanks for registering! We will get in touch within the next days.\r\n\r\nTo get the latest news of the Verein register to our mailing list: http://eepurl.com/dKx6Ns\r\n\r\nSee you soon!\r\nAcro Züri Verein"
         sender = 'noreply@acrozuri.ch'
         to = [instance.email, 'info@acrozuri.ch']
         send_mail(subject, message, sender, to)
