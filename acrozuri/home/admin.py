@@ -11,11 +11,11 @@ class MemberAdmin(admin.ModelAdmin):
         "last_name",
         "first_name",
         "address",
-        "post_code",
         "city",
         "phone",
         "email",
-        "created"
+        "created",
+        "payed_period"
     )
 
 
