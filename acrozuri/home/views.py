@@ -44,6 +44,7 @@ class MemberView(FormView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
+        # TODO make a template email function
         instance = form.save(commit=False)
         subject = "Acro Zuri Verein - Registration"
         message = "Grüessech " + instance.first_name + " " + instance.last_name + "\r\n\r\n Thanks for registering! We will get in touch within the next days.\r\n\r\nTo get the latest news of the Verein register to our mailing list: http://eepurl.com/dKx6Ns\r\n\r\nSee you soon!\r\nAcro Züri Verein"
