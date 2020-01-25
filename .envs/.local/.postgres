@@ -1,7 +1,0 @@
-# PostgreSQL
-# ------------------------------------------------------------------------------
-POSTGRES_HOST=postgres
-POSTGRES_PORT=5432
-POSTGRES_DB=acrozuri
-POSTGRES_USER=akhWELgAVUqHncFpMgCfLFswHDDRYlSn
-POSTGRES_PASSWORD=IvvhfYiHnTXdQYiyjn9n2CP3GqV8x3Bg7XpkyEzTVj16vYVQUy1bjqRBjW8KQIof
