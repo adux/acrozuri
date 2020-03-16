@@ -1,7 +1,10 @@
 from datetime import datetime
 from django import forms
 from django.utils.translation import ugettext_lazy as _
+
 from acrozuri.home.models import Member, News
+
+from captcha.fields import CaptchaField
 
 min_age = 10
 this_year = datetime.now().year
@@ -36,6 +39,7 @@ class MemberForm(forms.ModelForm):
 
 class NewsForm(forms.ModelForm):
     action = forms.CharField(max_length=60, widget=forms.HiddenInput())
+    captcha = CaptchaField()
 
     class Meta:
         model = News

@@ -18,7 +18,9 @@ urlpatterns = [
     path("register/", TemplateView.as_view(template_name="pages/register.html"), name="register"),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("captcha/", include("captcha.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
