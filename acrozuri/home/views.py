@@ -1,5 +1,4 @@
-from easy_pdf.views import PDFTemplateView
-
+from django.http import FileResponse, Http404
 
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
@@ -8,6 +7,7 @@ from django.views.generic.edit import FormView
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+import os
 
 
 from .multiforms import MultiFormsView
@@ -62,15 +62,10 @@ class MemberView(FormView):
         return super().form_valid(form)
 
 
-class CoronaView(PDFTemplateView):
-    template_name = 'pages/corona.html'
+def coronaview(request):
+    pdf = os.path.join(settings.STATIC_ROOT, 'schutzkonzept.pdf')
 
-    base_url = 'file://' + settings.STATIC_ROOT
-    download_filename = 'schutzkonzept.pdf'
-
-    def get_context_data(self, **kwargs):
-        return super(CoronaView, self).get_context_data(
-            pagesize='A4',
-            title='Schutzkonzept - Acro Züri Verein',
-            **kwargs
-        )
+    # try:
+    return FileResponse(open(pdf, 'rb'), content_type='application/pdf')
+    # except FileNotFoundError:
+    #     raise Http404()

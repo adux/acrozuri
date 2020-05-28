@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from acrozuri.home.views import EventView, MemberView, HomeView, CoronaView
+from acrozuri.home.views import EventView, MemberView, HomeView, coronaview
 
 urlpatterns = [
     path("", HomeView.as_view(), name="home"),
@@ -19,7 +19,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("captcha/", include("captcha.urls")),
-    path("corona/", CoronaView.as_view(), name="corona"),
+    path("corona/", coronaview, name="corona"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
