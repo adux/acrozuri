@@ -1,9 +1,15 @@
-from django.core.mail import send_mail
+from easy_pdf.views import PDFTemplateView
+
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
+
+
 from .multiforms import MultiFormsView
 from .models import Class
 from .forms import MemberForm, NewsForm
@@ -54,3 +60,17 @@ class MemberView(FormView):
         instance.save()
         messages.add_message(self.request, messages.SUCCESS, F'Thanks for Registering, please check your email.')
         return super().form_valid(form)
+
+
+class CoronaView(PDFTemplateView):
+    template_name = 'pages/corona.html'
+
+    base_url = 'file://' + settings.STATIC_ROOT
+    download_filename = 'schutzkonzept.pdf'
+
+    def get_context_data(self, **kwargs):
+        return super(CoronaView, self).get_context_data(
+            pagesize='A4',
+            title='Schutzkonzept - Acro Züri Verein',
+            **kwargs
+        )

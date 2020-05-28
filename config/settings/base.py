@@ -73,7 +73,9 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "rest_framework",
     "captcha",
+    "easy_pdf",
 ]
+
 LOCAL_APPS = [
     "acrozuri.users.apps.UsersConfig",
     # Your stuff: custom apps go here
