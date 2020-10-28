@@ -15,7 +15,8 @@ class MemberAdmin(admin.ModelAdmin):
         "phone",
         "email",
         "created",
-        "paid_period"
+        "payment_previous_period", 
+        "payment_current_period"
     )
 
 

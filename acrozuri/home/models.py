@@ -266,7 +266,8 @@ class Member(models.Model):
     email = models.CharField(max_length=72)
     note = models.TextField(max_length=2000, null=True, blank=True)
     created = models.DateField(auto_now_add=True)
-    paid_period = models.BooleanField(default=False, blank=True)
+    payment_previous_period = models.BooleanField(default=False, blank=True)
+    payment_current_period = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return '%s %s, %s' % (self.first_name, self.last_name, self.post_code)
