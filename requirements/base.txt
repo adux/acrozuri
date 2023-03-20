@@ -23,4 +23,4 @@ coreapi==2.3.3  # https://github.com/core-api/python-client
 django-simple-captcha==0.5.11
 #PDF
 django-easy-pdf==0.2.0.dev1
-cairosvg==2.5.2
+cairosvg==2.7.0
